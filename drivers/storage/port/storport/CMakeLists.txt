@@ -7,11 +7,19 @@ list(APPEND SOURCE
     misc.c
     pdo.c
     storport.c
-    stubs.c)
+    stubs.c
+fkrnlimp.c)
 
 list(APPEND PCH_SKIP_SOURCE
     guid.c)
+# Add include directories
+include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}/../sdk/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/../sdk/include/ddk
+    ${CMAKE_CURRENT_SOURCE_DIR}/../sdk/include/reactos
+    ${CMAKE_CURRENT_SOURCE_DIR}/../sdk/lib/pseh/include/pseh
 
+)
 add_library(storport MODULE
     ${SOURCE}
     ${PCH_SKIP_SOURCE}
