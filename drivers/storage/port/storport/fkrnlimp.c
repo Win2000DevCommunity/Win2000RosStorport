@@ -1,5 +1,5 @@
 #include "fkrnlimp.h"
-
+ 
 // Implement KeAcquireInterruptSpinLock
 KIRQL NTAPI
 PoAcquireInterruptSpinLock(IN PKINTERRUPT Interrupt)
